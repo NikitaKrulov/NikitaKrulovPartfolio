@@ -641,6 +641,7 @@ body:has(.switch__input:checked) {
   }
   .portfolio__card-title {
     padding: 10px;
+    gap: 10px;
   }
   .portfolio__card-description-wrapper {
     position: relative;
