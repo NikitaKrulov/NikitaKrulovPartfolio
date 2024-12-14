@@ -179,3 +179,72 @@ document.addEventListener('DOMContentLoaded', function () {
     // Применяем фильтр при изменении выбора
     filterSelect.addEventListener('change', filterCards);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const originalLinks = document.querySelectorAll('.portfolio__card-original');
+    originalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.getAttribute('data-href');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const portfolioWrapper = document.querySelector('.portfolio__wrapper');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const cards = portfolioWrapper.querySelectorAll('.portfolio__card');
+    let visibleCards = window.innerWidth < 768 ? 2 : 4;
+    let allCardsVisible = false;
+
+    function updateVisibleCards() {
+        cards.forEach((card, index) => {
+            if (index < visibleCards) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 380); // Соответствует времени transition в CSS
+            }
+        });
+
+        updateButtonText();
+    }
+
+    function updateButtonText() {
+        if (allCardsVisible) {
+            showMoreBtn.querySelector('span').textContent = 'Скрыть';
+        } else {
+            showMoreBtn.querySelector('span').textContent = 'Показать все';
+        }
+    }
+
+    function toggleCards() {
+        if (allCardsVisible) {
+            visibleCards = window.innerWidth < 768 ? 2 : 4;
+            allCardsVisible = false;
+        } else {
+            visibleCards = cards.length;
+            allCardsVisible = true;
+        }
+        updateVisibleCards();
+    }
+
+    showMoreBtn.addEventListener('click', toggleCards);
+
+    window.addEventListener('resize', function() {
+        if (!allCardsVisible) {
+            visibleCards = window.innerWidth < 768 ? 2 : 4;
+            updateVisibleCards();
+        }
+    });
+
+    updateVisibleCards();
+});
