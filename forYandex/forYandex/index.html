@@ -29,9 +29,23 @@
                         <a href="#support__more" class="btnTransparent">Подробнее о турнире</a>
                     </div>
                 </div>
-                <img src="./images/heroBackgroundCity.png" alt="" class="hero__bgImg">
             </div>
-            <img src="./images/background.png" alt="" class="hero__backMask">
+            <div class="background">
+                <div class="background__wrapper">
+                    <div class="container">
+                        <div class="background__wrapper-inner">
+                            <img src="./images/sun.png" alt="" class="background__wrapper-sun">
+                            <img src="./images/city.png" alt="" class="background__wrapper-bgImg">
+                        </div>
+
+                        <div class="background__wrapper-item">
+                            <img src="./images/horse.png" alt="" class="background__wrapper-horse">
+                            <img src="./images/pawn.png" alt="" class="background__wrapper-pawn">
+                        </div>
+                    </div>
+                    <img src="./images/background.png" alt="" class="background__wrapper-backMask">
+                </div>
+            </div>
             <div class="tickers">
                 <div class="ticker">
                     <div class="ticker__wrapper">
@@ -59,13 +73,13 @@
                         <img src="./images/location.png" alt="">
                     </div>
                     <div class="support__location">
-                        <h3>и Сеанс <span class="red">одновременной игры в шахматы на 160 досках</span> гроссмейстера
+                        <h3>и Сеанс <span class="red">одновременной игры в шахматы на 160 досках</span> гроссмейстера
                             О. Бендера</h3>
                         <div class="support__info" id="support__more">
                             <p class="support__info-label">Место проведения:</p>
                             <p class="support__info-value">Клуб «Картонажник»</p>
                             <p class="support__info-label">Дата и время мероприятия:</p>
-                            <p class="support__info-value">22 июня 1927 г. в 18:00</p>
+                            <p class="support__info-value">22 июня 1927 г.в 18:00</p>
                             <p class="support__info-label">Стоимость входных билетов:</p>
                             <p class="support__info-value">20 коп.</p>
                             <p class="support__info-label">Плата за игру:</p>
@@ -116,8 +130,20 @@
                             Создание аэропорта «Большие Васюки» с регулярным отправлением
                             почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
                         </p>
-                        <img src="./images/airplane.png" alt="">
+                        <img src="./images/airplane.png" alt="" class="airplaneImg">
                     </div>
+                </div>
+                <div class="pagination stages__pagination ">
+                    <div class="pagination__btn stages__pagination-btnPrev stages__pagination-btnPrev--off"><img
+                            src="./images/arrow.png" alt=""></div>
+                    <div class="stages__pagination-page">
+                        <div class="circle circle--active"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="pagination__btn stages__pagination-btnNext"><img src="./images/arrow.png" alt=""></div>
                 </div>
             </div>
         </section>
@@ -125,10 +151,10 @@
             <div class="container">
                 <div class="players__top">
                     <h2>Участники турнира</h2>
-                    <div class="players__top-actions">
-                        <div class="players__top-btn"><img src="./images/arrow.png" alt=""></div>
-                        <div class="players__top-pages"><span>3</span><span>/</span><span>6</span></div>
-                        <div class="players__top-btn"><img src="./images/arrow.png" alt=""></div>
+                    <div class="players__top-actions pagination">
+                        <div class="pagination__btn players__top-btn"><img src="./images/arrow.png" alt=""></div>
+                        <div class="players__top-pagination"><span>3</span><span>/</span><span>6</span></div>
+                        <div class="pagination__btn players__top-btn"><img src="./images/arrow.png" alt=""></div>
                     </div>
                 </div>
                 <div class="players__slider">
