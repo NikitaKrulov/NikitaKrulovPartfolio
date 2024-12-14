@@ -10,6 +10,7 @@
 
     &__wrapper-about {
         flex-basis: 70%;
+        line-height: 160%;
     }
 
     &__wrapper-title {
@@ -56,18 +57,11 @@
         }
     }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .footer {
-        font-size: 14px;
-    }
-}
-@media (max-width: 576px) {
-    .footer {
-        font-size: 16px;
         &__wrapper {
-            flex-direction: column;
-            gap: 20px;
+            flex-direction: column-reverse;
+            gap: 40px;
             &-links {
                 flex-wrap: wrap;
                 flex-direction: row;
@@ -81,6 +75,20 @@
         &__copyright {
             font-size: 14px;
             opacity: 0.8;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+        font-size: 14px;
+    }
+}
+@media (max-width: 576px) {
+    .footer {
+        font-size: 16px;
+
+        &__wrapper {
+            gap: 20px;
         }
     }
 }
