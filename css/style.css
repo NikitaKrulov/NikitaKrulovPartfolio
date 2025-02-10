@@ -697,6 +697,31 @@ body:has(.switch__input:checked) {
     display: none;
   }
 }
+.patent {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.patent h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .patent h2 {
+    font-size: 30px;
+  }
+  .patent {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 576px) {
+  .patent h2 {
+    font-size: 25px;
+  }
+  .patent {
+    margin-bottom: 40px;
+  }
+}
 .footer {
   padding: 30px 0;
 }
