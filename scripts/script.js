@@ -185,16 +185,16 @@ document.addEventListener('DOMContentLoaded', function () {
         // Добавляем карточки обратно в отсортированном порядке
         cards.forEach((card, index) => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            card.style.transitionDelay = `${index * 0.05}s`;
+            card.style.transform = 'translateY(20px) scale(0.95)';
+            card.style.transition = 'opacity 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            card.style.transitionDelay = `${index * 0.07}s`;
             
             portfolioWrapper.appendChild(card);
             
             // Используем setTimeout для плавного появления
             setTimeout(() => {
                 card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+                card.style.transform = 'translateY(0) scale(1)';
             }, 10);
             
             // Скрываем карточки, если их больше initialCardCount и список свернут
@@ -224,31 +224,48 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonText.textContent = isExpanded ? 'Скрыть' : 'Показать все';
     }
     
-    // Функция для переключения видимости карточек
+    // Функция для переключения видимости карточек с улучшенной анимацией
     function toggleCards() {
         const cards = getAllCards();
         isExpanded = !isExpanded;
         
+        const animationEffects = [
+            { transform: 'translateY(25px) scale(0.95)', opacity: '0' },
+            { transform: 'translateY(-10px) scale(0.98) rotate(1deg)', opacity: '0' },
+            { transform: 'translateY(20px) scale(0.97) rotate(-1deg)', opacity: '0' },
+            { transform: 'translateX(15px) scale(0.96)', opacity: '0' },
+            { transform: 'translateX(-15px) scale(0.96)', opacity: '0' }
+        ];
+        
         cards.forEach((card, index) => {
             if (index >= initialCardCount) {
                 if (isExpanded) {
-                    // Показываем скрытые карточки с анимацией
+                    // Выбираем случайный эффект анимации для разнообразия
+                    const effectIndex = Math.floor(Math.random() * animationEffects.length);
+                    const effect = animationEffects[effectIndex];
+                    
+                    // Показываем скрытые карточки с улучшенной анимацией
                     card.style.display = '';
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
+                    card.style.transform = effect.transform;
+                    card.style.transition = 'opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    card.style.transitionDelay = `${(index - initialCardCount) * 0.08 + 0.1}s`;
                     
+                    // Запускаем анимацию через небольшую задержку
                     setTimeout(() => {
                         card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 50);
+                        card.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                    }, 20);
                 } else {
                     // Скрываем карточки с анимацией
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
+                    card.style.transform = 'translateY(20px) scale(0.95)';
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    card.style.transitionDelay = `${(cards.length - index) * 0.03}s`;
                     
                     setTimeout(() => {
                         card.style.display = 'none';
-                    }, 300);
+                    }, 400);
                 }
             }
         });

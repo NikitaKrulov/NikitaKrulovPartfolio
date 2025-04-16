@@ -1,0 +1,26 @@
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+  opacity: 0.3;
+  filter: invert(1);
+  .dark-mode & {
+    filter: invert(0);
+  }
+}
+
+.particle:hover {
+  opacity: 0.5;
+}

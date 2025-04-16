@@ -5,6 +5,7 @@
 @import "general";
 @import "scroll";
 @import "themeToggle";
+@import "particles.scss";
 
 @import "header";
 @import "skills";
@@ -15,3 +16,8 @@
 .container{
     @include container;
 }
+body {
+
+    position: relative;
+
+  }
