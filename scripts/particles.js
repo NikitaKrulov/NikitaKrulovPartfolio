@@ -1,6 +1,26 @@
 const particlesContainer = document.getElementById('particles');
-    const canvas = document.getElementById('connectionCanvas');
-    const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('connectionCanvas');
+const ctx = canvas.getContext('2d');
+
+// Функция для проверки, является ли устройство сенсорным или мобильным
+function isTouchDevice() {
+    return ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0) ||
+        (window.innerWidth <= 768);
+}
+
+// Функция для проверки производительности устройства
+function isLowPerformanceDevice() {
+    // Простая эвристика: если устройство мобильное, считаем его менее производительным
+    if (isTouchDevice()) return true;
+    
+    // Можно добавить дополнительные проверки производительности
+    return false;
+}
+
+// Запускаем анимацию частиц только если устройство не сенсорное и имеет достаточную производительность
+if (!isTouchDevice() && !isLowPerformanceDevice()) {
     const particles = [];
     let mouseX = 0;
     let mouseY = 0;
@@ -46,11 +66,9 @@ const particlesContainer = document.getElementById('particles');
       });
     }
 
-
     function drawConnections() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-
       if (document.body.classList.contains('dark-mode')) {
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)'; 
       } else {
@@ -60,7 +78,6 @@ const particlesContainer = document.getElementById('particles');
       ctx.lineWidth = 1;
 
       const maxDistance = 100; 
-
 
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
@@ -81,7 +98,6 @@ const particlesContainer = document.getElementById('particles');
           }
         }
 
-
         const mouseDistance = Math.sqrt((mouseX - x1) ** 2 + (mouseY - y1) ** 2);
         if (mouseDistance < maxDistance) {
           ctx.beginPath();
@@ -91,7 +107,6 @@ const particlesContainer = document.getElementById('particles');
         }
       }
     }
-
 
     function animateParticles() {
       particles.forEach(p => {
@@ -127,18 +142,13 @@ const particlesContainer = document.getElementById('particles');
       requestAnimationFrame(animateParticles);
     }
 
-
     for (let i = 0; i < 100; i++) {
       createParticle();
     }
 
-  
     animateParticles();
-
-    
     setInterval(createParticle, 2000);
 
-    
     window.addEventListener('resize', () => {
       particles.forEach(p => {
         if (parseFloat(p.element.style.left) > window.innerWidth) {
@@ -149,3 +159,8 @@ const particlesContainer = document.getElementById('particles');
         }
       });
     });
+} else {
+    // Скрываем элементы canvas и частиц для слабых/сенсорных устройств
+    if (particlesContainer) particlesContainer.style.display = 'none';
+    if (canvas) canvas.style.display = 'none';
+}
