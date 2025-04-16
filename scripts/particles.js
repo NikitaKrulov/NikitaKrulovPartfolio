@@ -1,3 +1,17 @@
+const preloader = document.getElementById('preloader');
+const nLetter = document.getElementById('n-letter');
+const kLetter = document.getElementById('k-letter');
+
+setTimeout(() => {
+    preloader.style.transform = 'scale(10)';
+    preloader.style.opacity = '0';
+    document.querySelector('.content')?.classList.add('visible');
+}, 1000);
+
+setTimeout(() => {
+    preloader.style.display = 'none';
+}, 2000);
+setTimeout(() => {
 const particlesContainer = document.getElementById('particles');
 const canvas = document.getElementById('connectionCanvas');
 const ctx = canvas.getContext('2d');
@@ -295,4 +309,4 @@ if (!isTouchDevice() && !isLowPerformanceDevice()) {
     // Скрываем элементы canvas и частиц для слабых/сенсорных устройств
     if (particlesContainer) particlesContainer.style.display = 'none';
     if (canvas) canvas.style.display = 'none';
-}
+}}, 1000);
