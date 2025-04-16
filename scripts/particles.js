@@ -49,7 +49,14 @@ const particlesContainer = document.getElementById('particles');
 
     function drawConnections() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      
+
+      if (document.body.classList.contains('dark-mode')) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)'; 
+      } else {
+        ctx.strokeStyle = 'rgba(54, 54, 54, 0.21)'; 
+      }
+      
       ctx.lineWidth = 1;
 
       const maxDistance = 100; 
