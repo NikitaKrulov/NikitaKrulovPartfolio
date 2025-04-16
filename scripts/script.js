@@ -147,15 +147,25 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     const filterSelect = document.getElementById('portfolioFilter');
     const portfolioWrapper = document.querySelector('.portfolio__wrapper');
-
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    
+    // Определяем максимальное количество карточек для начального отображения
+    const initialCardCount = 6;
+    let isExpanded = false;
+    
+    // Находим все карточки
+    const getAllCards = () => Array.from(portfolioWrapper.querySelectorAll('.portfolio__card'));
+    
+    // Функция для фильтрации и сортировки карточек
     function filterCards() {
-        const cards = Array.from(portfolioWrapper.querySelectorAll('.portfolio__card'));
-
+        const cards = getAllCards();
+        
+        // Сортировка карточек
         cards.sort((a, b) => {
-            const aTitle = a.querySelector('h2').textContent;
-            const bTitle = b.querySelector('h2').textContent;
-            const aYear = parseInt(a.querySelector('p').textContent);
-            const bYear = parseInt(b.querySelector('p').textContent);
+            const aTitle = a.querySelector('.portfolio__card-title h2').textContent;
+            const bTitle = b.querySelector('.portfolio__card-title h2').textContent;
+            const aYear = parseInt(a.querySelector('.portfolio__card-title p').textContent);
+            const bYear = parseInt(b.querySelector('.portfolio__card-title p').textContent);
 
             switch (filterSelect.value) {
                 case 'newest':
@@ -163,21 +173,104 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 'oldest':
                     return aYear - bYear;
                 case 'name':
-                    return aTitle.localeCompare(bTitle);
+                    return aTitle.localeCompare(bTitle, 'ru');
                 default:
                     return 0;
             }
         });
-
+        
+        // Удаляем все карточки из DOM
         portfolioWrapper.innerHTML = '';
-        cards.forEach(card => portfolioWrapper.appendChild(card));
+        
+        // Добавляем карточки обратно в отсортированном порядке
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.transitionDelay = `${index * 0.05}s`;
+            
+            portfolioWrapper.appendChild(card);
+            
+            // Используем setTimeout для плавного появления
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Скрываем карточки, если их больше initialCardCount и список свернут
+            if (index >= initialCardCount && !isExpanded) {
+                card.style.display = 'none';
+            } else {
+                card.style.display = '';
+            }
+        });
+        
+        // Обновляем состояние кнопки "Показать все"
+        updateShowMoreButton();
     }
-
-    // Применяем фильтр при загрузке страницы
-    filterCards();
-
-    // Применяем фильтр при изменении выбора
+    
+    // Функция для обновления текста и состояния кнопки "Показать все"
+    function updateShowMoreButton() {
+        const cards = getAllCards();
+        
+        if (cards.length <= initialCardCount) {
+            showMoreBtn.style.display = 'none';
+            return;
+        }
+        
+        showMoreBtn.style.display = 'flex';
+        
+        const buttonText = showMoreBtn.querySelector('span');
+        buttonText.textContent = isExpanded ? 'Скрыть' : 'Показать все';
+    }
+    
+    // Функция для переключения видимости карточек
+    function toggleCards() {
+        const cards = getAllCards();
+        isExpanded = !isExpanded;
+        
+        cards.forEach((card, index) => {
+            if (index >= initialCardCount) {
+                if (isExpanded) {
+                    // Показываем скрытые карточки с анимацией
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 50);
+                } else {
+                    // Скрываем карточки с анимацией
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            }
+        });
+        
+        updateShowMoreButton();
+        
+        // Прокручиваем к кнопке, если список сворачивается
+        if (!isExpanded) {
+            setTimeout(() => {
+                showMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+        }
+    }
+    
+    // Обработчик события для кнопки "Показать все"
+    showMoreBtn.addEventListener('click', toggleCards);
+    
+    // Обработчик события для фильтра
     filterSelect.addEventListener('change', filterCards);
+    
+    // Инициализация при загрузке страницы
+    filterCards();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -185,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
     originalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Останавливаем всплытие события
             const url = this.getAttribute('data-href');
             if (url) {
                 window.open(url, '_blank');
