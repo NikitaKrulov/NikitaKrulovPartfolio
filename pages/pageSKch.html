@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 
+<script src="https://unpkg.com/react@latest/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +14,7 @@
     <link rel="shortcut icon" href="../img/gear-dark.png" type="image/png+xml" media="(prefers-color-scheme: dark)">
 </head>
 
-<body class="dark-mode">
+<body>
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
@@ -62,17 +64,81 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="pageDiscription">
-            <div class="container">
-                <div class="pageDiscription__wrapper">
-                    <h2>Сайт для тестирования пользователей SkillCheck</h2>
+    <main id="root">
+        <!-- Material UI components will be rendered here by React -->
+    </main>
+    
+    <script type="module">
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+        import { ThemeProvider, createTheme } from '@mui/material/styles';
+        import CssBaseline from '@mui/material/CssBaseline';
+        import Container from '@mui/material/Container';
+        import Box from '@mui/material/Box';
+        import Typography from '@mui/material/Typography';
+        import Grid from '@mui/material/Grid';
+        import Paper from '@mui/material/Paper';
+        import Card from '@mui/material/Card';
+        import CardContent from '@mui/material/CardContent';
+        import CardMedia from '@mui/material/CardMedia';
+        import Chip from '@mui/material/Chip';
+        import Stack from '@mui/material/Stack';
 
-                </div>
-            </div>
+        const darkTheme = createTheme({
+            palette: {
+                mode: 'dark',
+            },
+        });
 
-        </div>
+        const ProjectPage = () => {
+            return (
+                <ThemeProvider theme={darkTheme}>
+                    <CssBaseline />
+                    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                        <Box sx={{ my: 4 }}>
+                            <Typography variant="h3" component="h1" gutterBottom align="center">
+                                Сайт для тестирования пользователей SkillCheck
+                            </Typography>
+                            <Typography variant="body1" align="center" color="text.secondary">
+                                Веб-приложение для проведения онлайн-тестирования и проверки навыков.
+                            </Typography>
+                        </Box>
 
+                        <Grid container spacing={4}>
+                            <Grid item xs={12} md={8}>
+                                <Paper elevation={3} sx={{ p: 3 }}>
+                                    <Typography variant="h5" gutterBottom>
+                                        Описание проекта
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Сайт SkillCheck представляет собой платформу для создания и прохождения тестов по различным дисциплинам. Проект включает в себя функционал для регистрации пользователей, создания тестов с различными типами вопросов, проведения тестирования, автоматической оценки результатов и предоставления статистики. Основной целью было создание удобного и интуитивно понятного инструмента как для администраторов, так и для тестируемых.
+                                    </Typography>
+                                </Paper>
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                                <Paper elevation={3} sx={{ p: 3 }}>
+                                    <Typography variant="h5" gutterBottom>
+                                        Использованные технологии
+                                    </Typography>
+                                    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                                        <Chip label="HTML5" color="primary" />
+                                        <Chip label="CSS3/SCSS" color="primary" />
+                                        <Chip label="JavaScript" color="primary" />
+                                        <Chip label="PHP" color="primary" />
+                                        <Chip label="MySQL" color="primary" />
+                                        <Chip label="Bootstrap" color="primary" />
+                                        <Chip label="GIT" color="primary" />
+                                    </Stack>
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </ThemeProvider>
+            );
+        };
+        ReactDOM.createRoot(document.getElementById('root')).render(<ProjectPage />);
+        </script>
     </main>
     <footer class="footer">
         <div class="container">
