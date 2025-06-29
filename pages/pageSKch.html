@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<script src="https://unpkg.com/react@latest/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/fancybox/fancybox.css">
     <link rel="stylesheet" href="../css/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Портфолио</title>
+    <title>Портфолио - SkillCheck</title>
     <link rel="shortcut icon" href="../img/gear.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="../img/gear-dark.png" type="image/png+xml" media="(prefers-color-scheme: dark)">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="dark-mode">
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
@@ -64,81 +64,242 @@
             </div>
         </div>
     </header>
-    <main id="root">
-        <!-- Material UI components will be rendered here by React -->
-    </main>
-    
-    <script type="module">
-        import React from 'react';
-        import ReactDOM from 'react-dom/client';
-        import { ThemeProvider, createTheme } from '@mui/material/styles';
-        import CssBaseline from '@mui/material/CssBaseline';
-        import Container from '@mui/material/Container';
-        import Box from '@mui/material/Box';
-        import Typography from '@mui/material/Typography';
-        import Grid from '@mui/material/Grid';
-        import Paper from '@mui/material/Paper';
-        import Card from '@mui/material/Card';
-        import CardContent from '@mui/material/CardContent';
-        import CardMedia from '@mui/material/CardMedia';
-        import Chip from '@mui/material/Chip';
-        import Stack from '@mui/material/Stack';
+    <main>
+        <div class="pageDiscription">
+            <div class="container">
+                <div class="pageDiscription__wrapper">
+                    <h2 class="pageDiscription__title">Сайт для тестирования пользователей SkillCheck</h2>
 
-        const darkTheme = createTheme({
-            palette: {
-                mode: 'dark',
-            },
-        });
+                    <div class="pageDiscription__info">
+                        <div class="pageDiscription__info-item">
+                            <span class="material-icons">calendar_today</span>
+                            <p>Год разработки: 2025</p>
+                        </div>
+                        <div class="pageDiscription__info-item">
+                            <span class="material-icons">code</span>
+                            <p>PHP, SCSS, JavaScript, MySQL</p>
+                        </div>
+                    </div>
 
-        const ProjectPage = () => {
-            return (
-                <ThemeProvider theme={darkTheme}>
-                    <CssBaseline />
-                    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                        <Box sx={{ my: 4 }}>
-                            <Typography variant="h3" component="h1" gutterBottom align="center">
-                                Сайт для тестирования пользователей SkillCheck
-                            </Typography>
-                            <Typography variant="body1" align="center" color="text.secondary">
-                                Веб-приложение для проведения онлайн-тестирования и проверки навыков.
-                            </Typography>
-                        </Box>
+                    <div class="pageDiscription__overview">
+                        <h3>О проекте</h3>
+                        <p>Платформа SkillCheck предназначена для организации и проведения тестирования знаний
+                            пользователей в различных областях. Система позволяет проводить тесты разного уровня
+                            сложности, отслеживать прогресс пользователей и формировать детальные отчеты по результатам.
+                        </p>
+                    </div>
 
-                        <Grid container spacing={4}>
-                            <Grid item xs={12} md={8}>
-                                <Paper elevation={3} sx={{ p: 3 }}>
-                                    <Typography variant="h5" gutterBottom>
-                                        Описание проекта
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Сайт SkillCheck представляет собой платформу для создания и прохождения тестов по различным дисциплинам. Проект включает в себя функционал для регистрации пользователей, создания тестов с различными типами вопросов, проведения тестирования, автоматической оценки результатов и предоставления статистики. Основной целью было создание удобного и интуитивно понятного инструмента как для администраторов, так и для тестируемых.
-                                    </Typography>
-                                </Paper>
-                            </Grid>
+                    <!-- Swiper Slider -->
+                    <div class="pageDiscription__gallery">
+                        <h3>Галерея проекта</h3>
+                        <div class="swiper project-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="../img/projects/skillcheck/slide1.png" data-fancybox="gallery">
+                                        <img src="../img/projects/skillcheck/slide1.png"
+                                            alt="Главная страница SkillCheck">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="../img/projects/skillcheck/slide2.png" data-fancybox="gallery">
+                                        <img src="../img/projects/skillcheck/slide2.png"
+                                            alt="Интерфейс тестирования">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="../img/projects/skillcheck/slide4.png" data-fancybox="gallery">
+                                        <img src="../img/projects/skillcheck/slide4.png"
+                                            alt="Страница результатов">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="../img/projects/skillcheck/slide5.png" data-fancybox="gallery">
+                                        <img src="../img/projects/skillcheck/slide5.png"
+                                               alt="Панель администратора">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="../img/projects/skillcheck/slide6.png" data-fancybox="gallery">
+                                        <img src="../img/projects/skillcheck/slide6.png"
+                                            alt="Страница результатов">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
 
-                            <Grid item xs={12} md={4}>
-                                <Paper elevation={3} sx={{ p: 3 }}>
-                                    <Typography variant="h5" gutterBottom>
-                                        Использованные технологии
-                                    </Typography>
-                                    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                                        <Chip label="HTML5" color="primary" />
-                                        <Chip label="CSS3/SCSS" color="primary" />
-                                        <Chip label="JavaScript" color="primary" />
-                                        <Chip label="PHP" color="primary" />
-                                        <Chip label="MySQL" color="primary" />
-                                        <Chip label="Bootstrap" color="primary" />
-                                        <Chip label="GIT" color="primary" />
-                                    </Stack>
-                                </Paper>
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </ThemeProvider>
-            );
-        };
-        ReactDOM.createRoot(document.getElementById('root')).render(<ProjectPage />);
-        </script>
+                    <div class="pageDiscription__development">
+                        <h3>Процесс разработки</h3>
+                        <div class="pageDiscription__development-grid">
+                            <div class="development-card">
+                                <h4>Backend</h4>
+                                <p>Разработка серверной логики и API с использованием PHP и MySQL. Создание защищенной
+                                    системы аутентификации и авторизации пользователей.</p>
+                            </div>
+                            <div class="development-card">
+                                <h4>Frontend</h4>
+                                <p>Создание интуитивного и отзывчивого интерфейса с применением современных подходов
+                                    веб-разработки, фокус на безупречный пользовательский опыт.</p>
+                            </div>
+                            <div class="development-card">
+                                <h4>База данных</h4>
+                                <p>Оптимизированная реляционная база MySQL для эффективного хранения и обработки данных
+                                    пользователей и результатов тестов.</p>
+                            </div>
+                            <div class="development-card">
+                                <h4>Интеграция</h4>
+                                <p>Бесшовное объединение всех компонентов системы для обеспечения стабильной и
+                                    эффективной работы платформы.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pageDiscription__features">
+                        <h3>Ключевые функции</h3>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <span class="material-icons">assignment</span>
+                                <p>Создание тестов с различными типами вопросов (выбор варианта, текстовый ответ,
+                                    множественный выбор)</p>
+                            </li>
+                            <li class="feature-item">
+                                <span class="material-icons">timer</span>
+                                <p>Настройка временных ограничений и системы оценивания для каждого теста</p>
+                            </li>
+                            <li class="feature-item">
+                                <span class="material-icons">dashboard</span>
+                                <p>Аналитическая панель с детальной статистикой для администраторов</p>
+                            </li>
+                            <li class="feature-item">
+                                <span class="material-icons">person</span>
+                                <p>Персонализированные рекомендации для пользователей по результатам тестов</p>
+                            </li>
+                            <li class="feature-item">
+                                <span class="material-icons">security</span>
+                                <p>Защищенная система предотвращения мошенничества и подтасовки результатов</p>
+                            </li>
+                            <li class="feature-item">
+                                <span class="material-icons">devices</span>
+                                <p>Полная адаптивность для всех типов устройств</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pageDiscription__challenges">
+                        <h3>Проблемы и решения</h3>
+                        <div class="challenge-card">
+                            <div class="challenge-header">
+                                <h4>Проблема:</h4>
+                                <p>Обеспечение безопасности данных и предотвращение несанкционированного доступа к
+                                    тестам</p>
+                            </div>
+                            <div class="challenge-solution">
+                                <h4>Решение:</h4>
+                                <p>Внедрение многоуровневой системы защиты с шифрованием данных, контролем сессий и
+                                    проверкой пользователей</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-header">
+                                <h4>Проблема:</h4>
+                                <p>Обработка высоких нагрузок при одновременном тестировании большого числа
+                                    пользователей</p>
+                            </div>
+                            <div class="challenge-solution">
+                                <h4>Решение:</h4>
+                                <p>Оптимизация запросов к базе данных, внедрение системы кэширования и балансировки
+                                    нагрузки</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="pageDiscription__timeline">
+                        <h3>Этапы разработки</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Январь 2025</div>
+                                <div class="timeline-content">
+                                    <h4>Анализ требований и проектирование</h4>
+                                    <p>Определение функциональных и нефункциональных требований, создание архитектуры
+                                        системы</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Март 2025</div>
+                                <div class="timeline-content">
+                                    <h4>Разработка базы данных</h4>
+                                    <p>Проектирование и реализация структуры базы данных MySQL</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Апрель 2025</div>
+                                <div class="timeline-content">
+                                    <h4>Frontend и Backend разработка</h4>
+                                    <p>Параллельная работа над пользовательским интерфейсом и серверной логикой</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Июнь 2025</div>
+                                <div class="timeline-content">
+                                    <h4>Тестирование и отладка</h4>
+                                    <p>Проведение функционального, нагрузочного и интеграционного тестирования</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Июль 2025</div>
+                                <div class="timeline-content">
+                                    <h4>Запуск и поддержка</h4>
+                                    <p>Развертывание системы на боевом сервере и обеспечение технической поддержки</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pageDiscription__technologies">
+                        <h3>Используемые технологии</h3>
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <img src="../img/tech/php.svg" alt="PHP">
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/mysql.svg" alt="MySQL">
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/javascript.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/scss.svg" alt="SCSS">
+                                <span>SCSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/select2.svg" alt="Select2">
+                                <span>Select2</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/fancybox.svg" alt="Fancybox">
+                                <span>Fancybox</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../img/tech/swiper.svg" alt="Swiper">
+                                <span>Swiper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="container">
@@ -172,14 +333,62 @@
         </div>
     </footer>
 
+    <script src="../scripts/fancybox/fancybox.umd.js"></script>
+    <script src="../scripts/swiper/swiper-bundle.min.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Инициализация Swiper слайдера
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.project-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                    }
+                }
+            });
 
+            // Инициализация Fancybox
+            Fancybox.bind('[data-fancybox="gallery"]', {
+                // Опции Fancybox
+            });
 
+            // Обработка переключения темы
+            const themeToggle = document.querySelector('.switch__input');
 
-    <script src="./scripts/fancybox/fancybox.umd.js"></script>
-    <script src="./scripts/swiper/swiper-bundle.min.js"></script>
-    <script src="./scripts/script.js"></script>
+            // Проверяем сохраненную тему в localStorage при загрузке страницы
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.remove('dark-mode');
+                themeToggle.checked = false;
+            }
 
-
+            // Обработчик события изменения состояния переключателя темы
+            themeToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    // Включаем темную тему
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    // Включаем светлую тему
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -10,335 +10,472 @@
     <title>Портфолио</title>
     <link rel="shortcut icon" href="./img/gear.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="./img/gear-dark.png" type="image/png+xml" media="(prefers-color-scheme: dark)">
+
+
+    <!-- Стили отключения сайта  -->
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:wght@300;400;500;700&amp;family=Google+Sans:wght@400;500;700;900&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+      --m3-primary: #6750A4;
+      --m3-on-primary: #FFFFFF;
+      --m3-primary-container: #EADDFF;
+      --m3-on-primary-container: #21005D;
+      --m3-secondary: #625B71;
+      --m3-on-secondary: #FFFFFF;
+      --m3-secondary-container: #E8DEF8;
+      --m3-on-secondary-container: #1D192B;
+      --m3-tertiary: #7D5260;
+      --m3-on-tertiary: #FFFFFF;
+      --m3-tertiary-container: #FFD8E4;
+      --m3-on-tertiary-container: #31111D;
+      --m3-error: #B3261E;
+      --m3-on-error: #FFFFFF;
+      --m3-error-container: #F9DEDC;
+      --m3-on-error-container: #410E0B;
+      --m3-background: #FFFBFE;
+      --m3-on-background: #1C1B1F;
+      --m3-surface: #FFFBFE;
+      --m3-on-surface: #cecece;
+      --m3-surface-variant: #E7E0EC;
+      --m3-on-surface-variant: #dfdfdf;
+      --m3-outline: #79747E;
+      --m3-shadow: #000000;
+      --m3-inverse-surface: #313033;
+      --m3-inverse-on-surface: #F4EFF4;
+      --m3-inverse-primary: #D0BCFF;
+      --m3-surface-tint-color: var(--m3-primary);}
+    body {
+      font-family: 'Roboto', 'Google Sans', sans-serif;
+      background-color: var(--m3-background);
+      color: var(--m3-on-background);
+    }
+    @keyframes float-shape {
+      0% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.6; }
+      25% { transform: translateY(-15px) rotate(10deg) scale(1.05); opacity: 0.7; }
+      50% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.8; }
+      75% { transform: translateY(15px) rotate(-10deg) scale(0.95); opacity: 0.7; }
+      100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.6; }
+    }
+    .animated-shape {
+      position: absolute;
+      border-radius: 32px;filter: blur(24px);mix-blend-mode: multiply;transition: transform 0.5s ease-out, opacity 0.5s ease-out;}
+    .shape-1 {
+      width: 250px; height: 250px;
+      background-color: var(--m3-primary-container);
+      top: 5%; left: 10%;
+      animation: float-shape 18s ease-in-out infinite alternate;
+    }
+    .shape-2 {
+      width: 180px; height: 180px;
+      background-color: var(--m3-secondary-container);
+      bottom: 10%; right: 5%;
+      animation: float-shape 22s ease-in-out infinite alternate;
+      animation-delay: -3s;
+    }
+    .shape-3 {
+      width: 120px; height: 120px;
+      background-color: var(--m3-tertiary-container);
+      top: 40%; right: 15%;
+      animation: float-shape 20s ease-in-out infinite alternate;
+      animation-delay: -6s;
+    }
+    .shape-4 {
+      width: 200px; height: 200px;
+      background-color: var(--m3-error-container);bottom: 30%; left: 20%;
+      animation: float-shape 25s ease-in-out infinite alternate;
+      animation-delay: -9s;
+    }
+    .shape-5 {width: 150px; height: 150px;
+      background-color: var(--m3-primary);
+      opacity: 0.2;top: 20%; right: 40%;
+      animation: float-shape 16s ease-in-out infinite alternate;
+      animation-delay: -12s;
+    }
+      </style>
+    <!-- Стили отключения сайта  -->
 </head>
 
+
+
+
+
+
+
+
+
 <body class="dark-mode">
-    <header class="header">
-        <div class="container">
-            <div class="header__wrapper">
-                <h1>Портфолио</h1>
+
+    <!-- Отключение -->
+    <div
+        class="relative flex size-full min-h-screen flex-col items-center justify-center overflow-hidden p-4 selection:bg-[var(--m3-primary-container)] selection:text-[var(--m3-on-primary-container)]">
+        <div class="animated-shape shape-1"></div>
+        <div class="animated-shape shape-2"></div>
+        <div class="animated-shape shape-3"></div>
+        <div class="animated-shape shape-4"></div>
+        <div class="animated-shape shape-5"></div>
+        <main
+            class="relative z-10 flex w-full max-w-lg flex-col items-center rounded-3xl bg-[var(--m3-surface)]/[.90] p-8 text-center shadow-2xl backdrop-blur-lg sm:p-12 md:rounded-[28px]">
+            <div class="mb-6 flex items-center justify-center">
+                <span class="material-symbols-outlined text-6xl text-[var(--m3-primary)] sm:text-7xl">
+                    engineering
+                </span>
+            </div>
+            <h1
+                class="mb-3 font-['Google_Sans'] text-3xl font-medium tracking-tight text-[var(--m3-on-surface)] sm:text-4xl">
+                The site is temporarily disabled
+            </h1>
+            <p class="mb-8 text-base font-normal leading-relaxed text-[var(--m3-on-surface-variant)] sm:text-lg">
+                We are currently performing essential maintenance to improve our services. We expect to be back online
+                shortly. Thank you for your understanding.
+            </p>
+            <div class="flex flex-col items-center gap-4 sm:flex-row">
+                <button
+                    class="flex h-10 items-center justify-center gap-2 rounded-full bg-[var(--m3-primary)] px-6 text-sm font-medium tracking-wide text-[var(--m3-on-primary)] shadow-md transition-all duration-300 ease-out hover:bg-opacity-90 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--m3-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--m3-surface)]"
+                    onclick="window.location.reload()" type="button">
+                    <span class="material-symbols-outlined text-lg">refresh</span>
+                    <span>Try Again</span>
+                </button>
+            </div>
+        </main>
+    </div>
+    <!-- Отключение -->
+
+    <section style="display: none;">
+        <header class="header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <h1>Портфолио</h1>
 
 
-                <div class="themeToggle">
-                    <svg display="none">
-                        <symbol id="light" viewBox="0 0 24 24">
-                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(0,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(45,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(90,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(135,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(180,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(225,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(270,12,12)" />
-                                <line x1="12" y1="17" x2="12" y2="20" transform="rotate(315,12,12)" />
-                            </g>
-                            <circle fill="currentColor" cx="12" cy="12" r="5" />
-                        </symbol>
-                        <symbol id="dark" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M15.1,14.9c-3-0.5-5.5-3-6-6C8.8,7.1,9.1,5.4,9.9,4c0.4-0.8-0.4-1.7-1.2-1.4C4.6,4,1.8,7.9,2,12.5c0.2,5.1,4.4,9.3,9.5,9.5c4.5,0.2,8.5-2.6,9.9-6.6c0.3-0.8-0.6-1.7-1.4-1.2C18.6,14.9,16.9,15.2,15.1,14.9z" />
-                        </symbol>
-                    </svg>
-                    <label class="switch">
-                        <input class="switch__input" type="checkbox" role="switch" name="dark" checked />
-                        <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
-                            <use href="#light" />
+                    <div class="themeToggle">
+                        <svg display="none">
+                            <symbol id="light" viewBox="0 0 24 24">
+                                <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(0,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(45,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(90,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(135,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(180,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(225,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(270,12,12)" />
+                                    <line x1="12" y1="17" x2="12" y2="20" transform="rotate(315,12,12)" />
+                                </g>
+                                <circle fill="currentColor" cx="12" cy="12" r="5" />
+                            </symbol>
+                            <symbol id="dark" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M15.1,14.9c-3-0.5-5.5-3-6-6C8.8,7.1,9.1,5.4,9.9,4c0.4-0.8-0.4-1.7-1.2-1.4C4.6,4,1.8,7.9,2,12.5c0.2,5.1,4.4,9.3,9.5,9.5c4.5,0.2,8.5-2.6,9.9-6.6c0.3-0.8-0.6-1.7-1.4-1.2C18.6,14.9,16.9,15.2,15.1,14.9z" />
+                            </symbol>
                         </svg>
-                        <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
-                            <use href="#dark" />
-                        </svg>
-                        <span class="switch__inner"></span>
-                        <span class="switch__inner-icons">
+                        <label class="switch">
+                            <input class="switch__input" type="checkbox" role="switch" name="dark" checked />
                             <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
                                 <use href="#light" />
                             </svg>
                             <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
                                 <use href="#dark" />
                             </svg>
-                        </span>
-                        <span class="switch__sr">Dark Mode</span>
-                    </label>
+                            <span class="switch__inner"></span>
+                            <span class="switch__inner-icons">
+                                <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
+                                    <use href="#light" />
+                                </svg>
+                                <svg class="switch__icon" width="24px" height="24px" aria-hidden="true">
+                                    <use href="#dark" />
+                                </svg>
+                            </span>
+                            <span class="switch__sr">Dark Mode</span>
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div id="particles">
-            <canvas id="connectionCanvas"></canvas>
-        </div>
-        <section class="portfolio">
+        </header>
+        <main>
+            <div id="particles">
+                <canvas id="connectionCanvas"></canvas>
+            </div>
+            <section class="portfolio">
+                <div class="container">
+                    <div class="portfolio__filter">
+                        <select id="portfolioFilter" class="portfolio__filter-select">
+                            <option value="newest">По году (сначала новые)</option>
+                            <option value="oldest">По году (сначала старые)</option>
+                            <option value="name">По названию</option>
+                        </select>
+                        <img src="./img/gear.svg" alt="Фильтр">
+                    </div>
+                    <div class="portfolio__wrapper">
+
+                        <a class="portfolio__card" href="https://unictrans.com">
+                            <img src="./img/partfolio/unic.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>UnicTrans</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка для UnicTrans пассажирские перевозки</p>
+                                    <p>Использовались библиотеки: select2, fancybox, swiper.</p>
+                                    <p class="portfolio__card-original"
+                                        data-href="https://markup.spaceapp.ru/unictrans/index.html#">
+                                        Посмотреть оригинальную верстку
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://osuohai-agro.ru">
+                            <img src="./img/partfolio/oso.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Осуохай</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка дополнительных страниц на сайте выставки Осуохай</p>
+
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://pland-group.ru/">
+                            <img src="./img/partfolio/planD.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>planD</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка страниц сайта</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="portfolio__card" href="https://markup.spaceapp.ru/kcentr/">
+                            <img src="./img/partfolio/kcenter.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Котельный центр г.Саратов</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка страниц сайта</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://irbis-edu.ru">
+                            <img src="./img/partfolio/irbis.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>ИРБИС</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка сайта для Институт Развития Бизнеса и Стратегий.</p>
+                                    <p>Использовались библиотеки: select2, fancybox, Accordion, swiper.</p>
+                                    <p class="portfolio__card-original"
+                                        data-href="https://markup.spaceapp.ru/IrbisNew/index.html">
+                                        Посмотреть оригинальную верстку
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://markup.spaceapp.ru/APM-TEX/">
+                            <img src="./img/partfolio/amp-tech.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>АМП-ТЕХ</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка страниц сайта</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://eparhia-balakovo.ru/">
+                            <img src="./img/partfolio/eparchy.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Балаковская епархия</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка страниц сайта</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://xn--64-6kcadcgv0a4axp4bhes.xn--p1ai/">
+                            <img src="./img/partfolio/vlastelin.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Автовокзал Центральный</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Правки верстки на сайте</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="./forYandex/forYandex/index.html">
+                            <img src="./img/partfolio/yandex.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Лендинг "Клуб четырех коней"</h2>
+                                <p>2024</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка лендина</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="https://yahad.ru/donations/">
+                            <img src="./img/partfolio/yahad.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>Яхад</h2>
+                                <p>2023</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Верстка страницы данатов, и табличная верстка писем для компании Яхад</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="portfolio__card" href="./pages/pageSKch.html">
+                            <img src="./img/partfolio/Skch.png" alt="">
+                            <div class="portfolio__card-title">
+                                <h2>SKCH</h2>
+                                <p>2025</p>
+                            </div>
+                            <div class="portfolio__card-description-wrapper">
+                                <div class="portfolio__card-description">
+                                    <p>Описание работы:</p>
+                                    <p>Создание сайта для проведения тестирования пользователей</p>
+                                    <p>Разработан веб-сайт на PHP, SQL, SCSS и JavaScript, предназначенный для
+                                        проведения
+                                        тестирования пользователей. Выполнена полная разработка backend-части, включая
+                                        серверную логику и API, а также frontend-интерфейса с акцентом на удобство
+                                        использования и современный дизайн. Создана и оптимизирована реляционная база
+                                        данных
+                                        для хранения данных пользователей и результатов тестов. Проект включает
+                                        интеграцию
+                                        всех компонентов, обеспечивая стабильную и эффективную работу платформы</p>
+                                    <p>Использовались библиотеки: select2, fancybox, swiper.</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio__actions">
+                        <div class="portfolio__actions-btn btn" id="showMoreBtn"><span>Показать все</span></div>
+                    </div>
+                </div>
+            </section>
+            <section class="patent">
+                <div class="container">
+                    <h2>Патенты и авторские свидетельства</h2>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="./img/2024687204.eod.webp" data-fancybox="gallery-a"
+                                    data-caption="Программный комплекс «Рецидан»">
+                                    <img src="./img/2024687204.eod.webp" alt="«Рецидан»" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./img/2024690446.eod.webp" data-fancybox="gallery-a"
+                                    data-caption="Программный комплекс «Ламкол»">
+                                    <img src="./img/2024690446.eod.webp" alt="«Ламкол»" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="skills">
+                <div class="container">
+                    <div class="skills__wrapper">
+                        <div class="skills__item">
+                            <img src="./img/skills/git.png" alt="">
+                            <h3>Git</h3>
+                        </div>
+                        <div class="skills__item">
+                            <img src="./img/skills/html.png" alt="">
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="skills__item">
+                            <img src="./img/skills/scss.png" alt="">
+                            <h3>SASS</h3>
+                        </div>
+                        <div class="skills__item">
+                            <img src="./img/skills/js.png" alt="">
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="skills__item">
+                            <img src="./img/skills/framework.png" alt="">
+                            <h3>Frameworks and Libraries JavaScript</h3>
+                        </div>
+                        <div class="skills__item">
+                            <img src="./img/skills/php.png" alt="">
+                            <h3>PHP</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
             <div class="container">
-                <div class="portfolio__filter">
-                    <select id="portfolioFilter" class="portfolio__filter-select">
-                        <option value="newest">По году (сначала новые)</option>
-                        <option value="oldest">По году (сначала старые)</option>
-                        <option value="name">По названию</option>
-                    </select>
-                    <img src="./img/gear.svg" alt="Фильтр">
-                </div>
-                <div class="portfolio__wrapper">
+                <div class="footer__wrapper">
+                    <div class="footer__wrapper-about">
+                        <p class="footer__wrapper-title">Обо мне</p>
+                        <p>
+                            Я занимаюсь версткой сайтов более года и имею опыт работы в веб-студии, удаленно. В своей
+                            работе
+                            я стремлюсь к созданию высококачественной, PixelPerfect верстки, следуя макетам в FIGMA.
+                            Умею
+                            эффективно работать в команде, используя GIT, а также владею современными инструментами и
+                            библиотеками для веб-разработки, такими как GSAP и Bootstrap. Занимаюсь интеграцией
+                            слайдеров,
+                            аккордеонов и других элементов интерфейса для создания удобного и привлекательного
+                            пользовательского опыта. В данный момент получаю высшее образование в области информационных
+                            технологий и искусственного интеллекта, а также имею образование по программе среднего
+                            профессионального образования по разработке веб- и мультимедийных приложений. Есть опыт
+                            верстки
+                            писем
 
-                    <a class="portfolio__card" href="https://unictrans.com">
-                        <img src="./img/partfolio/unic.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>UnicTrans</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка для UnicTrans пассажирские перевозки</p>
-                                <p>Использовались библиотеки: select2, fancybox, swiper.</p>
-                                <p class="portfolio__card-original"
-                                    data-href="https://markup.spaceapp.ru/unictrans/index.html#">
-                                    Посмотреть оригинальную верстку
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://osuohai-agro.ru">
-                        <img src="./img/partfolio/oso.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Осуохай</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка дополнительных страниц на сайте выставки Осуохай</p>
+                        </p>
+                    </div>
+                    <div class="footer__wrapper-links">
+                        <p class="footer__wrapper-title">Контакты</p>
+                        <a href="https://t.me/nikitakrulov">Telegram</a>
+                        <a href="https://wa.me/+79663700247?text=Здравствуйте!">Whatsapp</a>
+                        <a href="https://vk.com/nikitakrulov">VK</a>
+                        <a href="mailto:nekitkrulov@gmail.com">Email</a>
+                        <a href="tel:+79663700247">Телефон</a>
+                    </div>
 
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://pland-group.ru/">
-                        <img src="./img/partfolio/planD.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>planD</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка страниц сайта</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="portfolio__card" href="https://markup.spaceapp.ru/kcentr/">
-                        <img src="./img/partfolio/kcenter.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Котельный центр г.Саратов</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка страниц сайта</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://irbis-edu.ru">
-                        <img src="./img/partfolio/irbis.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>ИРБИС</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка сайта для Институт Развития Бизнеса и Стратегий.</p>
-                                <p>Использовались библиотеки: select2, fancybox, Accordion, swiper.</p>
-                                <p class="portfolio__card-original"
-                                    data-href="https://markup.spaceapp.ru/IrbisNew/index.html">
-                                    Посмотреть оригинальную верстку
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://markup.spaceapp.ru/APM-TEX/">
-                        <img src="./img/partfolio/amp-tech.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>АМП-ТЕХ</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка страниц сайта</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://eparhia-balakovo.ru/">
-                        <img src="./img/partfolio/eparchy.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Балаковская епархия</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка страниц сайта</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://xn--64-6kcadcgv0a4axp4bhes.xn--p1ai/">
-                        <img src="./img/partfolio/vlastelin.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Автовокзал Центральный</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Правки верстки на сайте</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="./forYandex/forYandex/index.html">
-                        <img src="./img/partfolio/yandex.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Лендинг "Клуб четырех коней"</h2>
-                            <p>2024</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка лендина</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://yahad.ru/donations/">
-                        <img src="./img/partfolio/yahad.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>Яхад</h2>
-                            <p>2023</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Верстка страницы данатов, и табличная верстка писем для компании Яхад</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="portfolio__card" href="https://unictrans.com">
-                        <img src="./img/partfolio/Skch.png" alt="">
-                        <div class="portfolio__card-title">
-                            <h2>SKCH</h2>
-                            <p>2025</p>
-                        </div>
-                        <div class="portfolio__card-description-wrapper">
-                            <div class="portfolio__card-description">
-                                <p>Описание работы:</p>
-                                <p>Создание сайта для проведения тестирования пользователей</p>
-                                <p>Разработан веб-сайт на PHP, SQL, SCSS и JavaScript, предназначенный для проведения
-                                    тестирования пользователей. Выполнена полная разработка backend-части, включая
-                                    серверную логику и API, а также frontend-интерфейса с акцентом на удобство
-                                    использования и современный дизайн. Создана и оптимизирована реляционная база данных
-                                    для хранения данных пользователей и результатов тестов. Проект включает интеграцию
-                                    всех компонентов, обеспечивая стабильную и эффективную работу платформы</p>
-                                <p>Использовались библиотеки: select2, fancybox, swiper.</p>
-                                
-                            </div>
-                        </div>
-                    </a>
                 </div>
-                <div class="portfolio__actions">
-                    <div class="portfolio__actions-btn btn" id="showMoreBtn"><span>Показать все</span></div>
-                </div>
+                <p class="footer__copyright">© 2025</p>
             </div>
-        </section>
-        <section class="patent">
-            <div class="container">
-                <h2>Патенты и авторские свидетельства</h2>
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="./img/2024687204.eod.webp" data-fancybox="gallery-a"
-                                data-caption="Программный комплекс «Рецидан»">
-                                <img src="./img/2024687204.eod.webp" alt="«Рецидан»" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="./img/2024690446.eod.webp" data-fancybox="gallery-a"
-                                data-caption="Программный комплекс «Ламкол»">
-                                <img src="./img/2024690446.eod.webp" alt="«Ламкол»" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-            </div>
-        </section>
-        <section class="skills">
-            <div class="container">
-                <div class="skills__wrapper">
-                    <div class="skills__item">
-                        <img src="./img/skills/git.png" alt="">
-                        <h3>Git</h3>
-                    </div>
-                    <div class="skills__item">
-                        <img src="./img/skills/html.png" alt="">
-                        <h3>HTML5</h3>
-                    </div>
-                    <div class="skills__item">
-                        <img src="./img/skills/scss.png" alt="">
-                        <h3>SASS</h3>
-                    </div>
-                    <div class="skills__item">
-                        <img src="./img/skills/js.png" alt="">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skills__item">
-                        <img src="./img/skills/framework.png" alt="">
-                        <h3>Frameworks and Libraries JavaScript</h3>
-                    </div>
-                    <div class="skills__item">
-                        <img src="./img/skills/php.png" alt="">
-                        <h3>PHP</h3>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__wrapper-about">
-                    <p class="footer__wrapper-title">Обо мне</p>
-                    <p>
-                        Я занимаюсь версткой сайтов более года и имею опыт работы в веб-студии, удаленно. В своей работе
-                        я стремлюсь к созданию высококачественной, PixelPerfect верстки, следуя макетам в FIGMA. Умею
-                        эффективно работать в команде, используя GIT, а также владею современными инструментами и
-                        библиотеками для веб-разработки, такими как GSAP и Bootstrap. Занимаюсь интеграцией слайдеров,
-                        аккордеонов и других элементов интерфейса для создания удобного и привлекательного
-                        пользовательского опыта. В данный момент получаю высшее образование в области информационных
-                        технологий и искусственного интеллекта, а также имею образование по программе среднего
-                        профессионального образования по разработке веб- и мультимедийных приложений. Есть опыт верстки
-                        писем
-
-                    </p>
-                </div>
-                <div class="footer__wrapper-links">
-                    <p class="footer__wrapper-title">Контакты</p>
-                    <a href="https://t.me/nikitakrulov">Telegram</a>
-                    <a href="https://wa.me/+79663700247?text=Здравствуйте!">Whatsapp</a>
-                    <a href="https://vk.com/nikitakrulov">VK</a>
-                    <a href="mailto:nekitkrulov@gmail.com">Email</a>
-                    <a href="tel:+79663700247">Телефон</a>
-                </div>
-
-            </div>
-            <p class="footer__copyright">© 2025</p>
-        </div>
-    </footer>
-
-
-
-
+        </footer>
+    </section>
     <script src="./scripts/fancybox/fancybox.umd.js"></script>
     <script src="./scripts/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/script.js"></script>
